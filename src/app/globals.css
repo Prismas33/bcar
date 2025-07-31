@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-luxury-black text-white font-sans antialiased;
+    background: radial-gradient(ellipse at top, rgba(25, 25, 112, 0.1) 0%, rgba(0, 0, 0, 1) 70%);
+    min-height: 100vh;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-gold hover:from-accent-gold-light hover:to-accent-gold text-luxury-black font-semibold px-8 py-4 rounded-lg transition-all duration-500 transform hover:scale-105 shadow-luxury hover:shadow-luxury-hover;
+    background: linear-gradient(135deg, #b8860b 0%, #daa520 100%);
+    border: 1px solid rgba(184, 134, 11, 0.3);
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent hover:bg-accent-gold/10 text-text-primary border-2 border-accent-gold hover:border-accent-gold-light px-8 py-4 rounded-lg transition-all duration-500 font-medium;
+    backdrop-filter: blur(10px);
+  }
+  
+  .btn-luxury {
+    @apply relative overflow-hidden bg-gradient-to-r from-accent-gold via-accent-gold-light to-accent-gold text-luxury-black font-bold px-10 py-5 rounded-lg transition-all duration-700 transform hover:scale-105 shadow-luxury hover:shadow-glow;
+  }
+  
+  .btn-luxury::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-1000;
+  }
+  
+  .btn-luxury:hover::before {
+    @apply translate-x-full;
+  }
+  
+  .glass-morph {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+  
+  .glass-luxury {
+    @apply bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl border border-accent-gold/20 rounded-2xl;
+    box-shadow: 0 8px 32px 0 rgba(184, 134, 11, 0.2);
+  }
+  
+  .card-luxury {
+    @apply bg-gradient-subtle rounded-2xl border border-accent-gold/20 shadow-deep hover:shadow-luxury-hover transition-all duration-700 transform hover:-translate-y-3 hover:scale-[1.02];
+    backdrop-filter: blur(10px);
+  }
+  
+  .card-showcase {
+    @apply relative overflow-hidden bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-3xl border border-accent-gold/30 shadow-luxury hover:shadow-glow transition-all duration-1000 transform hover:-translate-y-6 hover:scale-105;
+    backdrop-filter: blur(20px);
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-gold via-accent-gold-light to-accent-gold bg-clip-text text-transparent;
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease-in-out infinite;
+  }
+  
+  .text-luxury {
+    @apply bg-gradient-to-r from-accent-platinum via-text-primary to-accent-platinum bg-clip-text text-transparent;
+  }
+  
+  .hero-title {
+    @apply text-6xl md:text-8xl lg:text-9xl font-black tracking-tight;
+    font-family: 'Playfair Display', serif;
+    text-shadow: 0 4px 20px rgba(184, 134, 11, 0.3);
+  }
+  
+  .section-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-accent-gold to-transparent opacity-30;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-shine {
+    animation: shine 3s linear infinite;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px rgba(184, 134, 11, 0.3); }
+  to { box-shadow: 0 0 40px rgba(184, 134, 11, 0.8); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
