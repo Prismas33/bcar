@@ -111,32 +111,6 @@ export default function HeroSection() {
           transition={{ duration: 25, repeat: Infinity, delay: 5 }}
           className="absolute bottom-40 right-20 w-48 h-48 bg-accent-gold/5 rounded-full blur-2xl"
         />
-        
-        {/* Floating Geometric Shapes */}
-        {[...Array(4)].map((_, i) => (
-          <motion.div
-            key={i}
-            animate={{ 
-              x: [0, 30, -30, 0],
-              y: [0, -20, 20, 0],
-              rotate: [0, 180, 360],
-              scale: [1, 1.1, 0.9, 1]
-            }}
-            transition={{ 
-              duration: 12 + i * 2, 
-              repeat: Infinity,
-              delay: i * 1.5
-            }}
-            className={`absolute opacity-5 ${
-              i % 2 === 0 ? 'w-3 h-3 bg-accent-gold rounded-full' : 
-              'w-4 h-4 border border-accent-gold rotate-45'
-            }`}
-            style={{
-              top: `${25 + (i * 20)}%`,
-              left: `${15 + (i * 15)}%`,
-            }}
-          />
-        ))}
       </motion.div>
 
       {/* Main Content */}
@@ -321,76 +295,83 @@ export default function HeroSection() {
             transition={{ duration: 1.2, delay: 0.3 }}
             className="lg:col-span-5 relative"
           >
-            {/* Enhanced 3D Car Showcase */}
-            <div className="relative perspective-1000">
-              <motion.div
-                style={{ x, y }}
-                animate={{ 
-                  rotateY: [0, 5, 0, -5, 0],
-                  rotateX: [0, -2, 0, 2, 0]
-                }}
-                transition={{ duration: 12, repeat: Infinity }}
-                className="card-showcase p-8 aspect-square shadow-2xl"
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-              >
-                {/* Main Car Display */}
-                <div className="w-full h-full flex items-center justify-center relative">
-                  <motion.div
-                    animate={{ 
-                      scale: isHovered ? 1.1 : 1,
-                      rotateZ: [0, 2, 0, -2, 0]
-                    }}
-                    transition={{ 
-                      scale: { duration: 0.3 },
-                      rotateZ: { duration: 8, repeat: Infinity }
-                    }}
-                    className="text-[10rem] relative z-10"
-                    style={{
-                      filter: "drop-shadow(0 20px 40px rgba(217, 119, 6, 0.3))"
-                    }}
-                  >
-                    🏎️
-                  </motion.div>
-                  
-                  {/* Enhanced Glow Effects */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/20 via-transparent to-accent-gold/10 rounded-3xl"></div>
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-4 border-2 border-accent-gold/30 rounded-3xl"
-                  />
-                  <motion.div
-                    animate={{ rotate: -360 }}
-                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-8 border border-accent-gold/20 rounded-3xl"
-                  />
-                </div>
-              </motion.div>
-              
-              {/* Enhanced Floating Feature Cards */}
+            {/* Car Showcase with floating cards */}
+            <div className="relative perspective-1000 min-h-[500px] flex items-center justify-center">
+              {/* Main Car Image with Frame */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.2, delay: 0.5 }}
+                className="relative"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                {/* Elegant Frame/Border */}
+                <div className="relative p-8 rounded-3xl bg-gradient-to-br from-secondary-100/40 via-secondary-100/20 to-secondary-100/40 backdrop-blur-sm border border-accent-gold/20 shadow-2xl overflow-visible">
+                  {/* Inner glow frame */}
+                  <div className="absolute inset-2 rounded-2xl border border-accent-gold/30 bg-gradient-to-br from-accent-gold/5 via-transparent to-accent-gold/10"></div>
+                  
+                  {/* Car image with overflow */}
+                  <motion.img
+                    src="/images/audi_hero.png"
+                    alt="Audi Hero Car"
+                    className="w-full max-w-[2000px] h-auto object-contain relative z-20 transform -translate-x-24 translate-y-72 scale-[2.0]"
+                    style={{
+                      filter: "drop-shadow(0 40px 80px rgba(0, 0, 0, 0.5))"
+                    }}
+                    animate={{
+                      scale: isHovered ? 2.1 : 2.0,
+                      y: [72, 62, 72],
+                      x: [-24, -20, -24]
+                    }}
+                    transition={{
+                      scale: { duration: 0.3 },
+                      y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                      x: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                  />
+                  
+                  {/* Frame corner accents */}
+                  <div className="absolute top-2 left-2 w-6 h-6 border-l-2 border-t-2 border-accent-gold/60 rounded-tl-lg"></div>
+                  <div className="absolute top-2 right-2 w-6 h-6 border-r-2 border-t-2 border-accent-gold/60 rounded-tr-lg"></div>
+                  <div className="absolute bottom-2 left-2 w-6 h-6 border-l-2 border-b-2 border-accent-gold/60 rounded-bl-lg"></div>
+                  <div className="absolute bottom-2 right-2 w-6 h-6 border-r-2 border-b-2 border-accent-gold/60 rounded-br-lg"></div>
+                </div>
+                
+                {/* Enhanced glow effect behind frame */}
+                <div className="absolute inset-0 bg-gradient-to-r from-accent-gold/15 via-accent-gold/8 to-accent-gold/15 rounded-3xl blur-2xl scale-110 -z-10" />
+                
+                {/* Rotating border animation */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 rounded-3xl border border-accent-gold/20 -z-5"
+                />
+              </motion.div>
+              
+              {/* Floating Feature Cards */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8, x: -50 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
-                className="absolute -top-6 -left-6 glass-luxury p-6 rounded-xl animate-float shadow-xl"
+                className="absolute -top-8 -left-8 glass-luxury p-4 rounded-xl animate-float shadow-xl"
               >
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-accent-gold to-accent-gold/80 rounded-full flex items-center justify-center">
                     <Award className="h-5 w-5 text-black" />
                   </div>
                   <div>
-                    <div className="text-accent-gold font-bold">Inspeccionado</div>
-                    <div className="text-text-subtle text-sm">Qualidade</div>
+                    <div className="text-accent-gold font-bold text-sm">Inspeccionado</div>
+                    <div className="text-text-subtle text-xs">Qualidade</div>
                   </div>
                 </div>
               </motion.div>
               
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
-                className="absolute -bottom-6 -right-6 glass-luxury p-6 rounded-xl animate-float shadow-xl"
+                className="absolute -bottom-8 -right-8 glass-luxury p-4 rounded-xl animate-float shadow-xl"
                 style={{ animationDelay: '2s' }}
               >
                 <div className="flex items-center space-x-3">
@@ -398,17 +379,17 @@ export default function HeroSection() {
                     <Shield className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <div className="text-emerald-400 font-bold">Garantia</div>
-                    <div className="text-text-subtle text-sm">Incluída</div>
+                    <div className="text-emerald-400 font-bold text-sm">Garantia</div>
+                    <div className="text-text-subtle text-xs">Incluída</div>
                   </div>
                 </div>
               </motion.div>
               
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, scale: 0.8, x: 50 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 1.4 }}
-                className="absolute top-1/2 -right-8 glass-luxury p-6 rounded-xl animate-float shadow-xl"
+                className="absolute top-1/2 -right-12 glass-luxury p-4 rounded-xl animate-float shadow-xl"
                 style={{ animationDelay: '4s' }}
               >
                 <div className="flex items-center space-x-3">
@@ -416,11 +397,36 @@ export default function HeroSection() {
                     <Zap className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <div className="text-purple-400 font-bold">Fiabilidade</div>
-                    <div className="text-text-subtle text-sm">Testada</div>
+                    <div className="text-purple-400 font-bold text-sm">Fiabilidade</div>
+                    <div className="text-text-subtle text-xs">Testada</div>
                   </div>
                 </div>
               </motion.div>
+
+              {/* Additional floating elements for visual appeal */}
+              <motion.div
+                animate={{ 
+                  rotate: 360,
+                  scale: [1, 1.2, 1]
+                }}
+                transition={{ 
+                  rotate: { duration: 20, repeat: Infinity, ease: "linear" },
+                  scale: { duration: 3, repeat: Infinity }
+                }}
+                className="absolute top-8 right-8 w-3 h-3 bg-accent-gold/30 rounded-full"
+              />
+              
+              <motion.div
+                animate={{ 
+                  rotate: -360,
+                  scale: [1, 0.8, 1]
+                }}
+                transition={{ 
+                  rotate: { duration: 25, repeat: Infinity, ease: "linear" },
+                  scale: { duration: 4, repeat: Infinity, delay: 1 }
+                }}
+                className="absolute bottom-12 left-12 w-2 h-2 bg-accent-gold/40 rounded-full"
+              />
             </div>
           </motion.div>
         </div>
