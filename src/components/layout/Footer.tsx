@@ -15,8 +15,8 @@ export function Footer() {
               </span>
             </div>
             <p className="text-text-subtle mb-6 max-w-md">
-              O seu stand automóvel de confiança em Portugal. Especialistas em veículos de luxo 
-              com mais de 20 anos de experiência no mercado.
+              O seu stand automóvel de confiança em Portugal. Especializados em carros usados 
+              de qualidade com total transparência e preços justos.
             </p>
             
             {/* Redes Sociais */}
@@ -70,7 +70,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-2 text-text-subtle">
                 <MapPin className="h-5 w-5 text-accent-gold" />
-                <span>Rua do Luxo, 123<br />1000-001 Lisboa</span>
+                <span>Rua dos Carros, 123<br />1000-001 Lisboa</span>
               </div>
               <div className="flex items-center space-x-2 text-text-subtle">
                 <Phone className="h-5 w-5 text-accent-gold" />

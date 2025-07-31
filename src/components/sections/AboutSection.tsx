@@ -7,23 +7,23 @@ export default function AboutSection() {
   const values = [
     {
       icon: Award,
-      title: 'Excelência',
-      description: 'Compromisso com a qualidade e perfeição em cada veículo.',
+      title: 'Qualidade',
+      description: 'Compromisso com a excelência em cada veículo usado que oferecemos.',
     },
     {
       icon: Shield,
-      title: 'Confiança',
-      description: 'Mais de 20 anos de experiência e transparência total.',
+      title: 'Transparência',
+      description: 'Honestidade total em cada negócio. Sem surpresas, só verdade.',
     },
     {
       icon: Users,
-      title: 'Personalização',
-      description: 'Atendimento personalizado para cada cliente único.',
+      title: 'Acessibilidade',
+      description: 'Carros para todos os orçamentos, sem comprometer a qualidade.',
     },
     {
       icon: Clock,
-      title: 'Tradição',
-      description: 'Décadas de tradição no mercado automóvel de luxo.',
+      title: 'Confiança',
+      description: 'Cada carro é testado e inspecionado antes de chegar até si.',
     },
   ];
 
@@ -42,32 +42,32 @@ export default function AboutSection() {
             </h2>
             
             <p className="text-xl text-text-subtle mb-8 leading-relaxed">
-              Há mais de duas décadas, a BCar tem sido sinónimo de excelência 
-              no mercado automóvel de luxo em Portugal. Especializamo-nos em oferecer 
-              veículos premium cuidadosamente selecionados, garantindo qualidade, 
-              elegância e performance incomparáveis.
+              A BCar é um novo conceito no mercado automóvel português. 
+              Especializamo-nos em carros usados de qualidade, oferecendo 
+              veículos cuidadosamente inspecionados para todos os orçamentos, 
+              sempre com total transparência e honestidade.
             </p>
 
             <p className="text-lg text-text-subtle mb-8 leading-relaxed">
-              A nossa missão é proporcionar uma experiência única na aquisição do 
-              seu veículo de sonho, com atendimento personalizado e total transparência 
-              em todos os processos.
+              A nossa missão é democratizar o acesso a carros de qualidade, 
+              oferecendo veículos usados inspecionados com total transparência 
+              e preços justos para todos os orçamentos.
             </p>
 
             {/* Estatísticas */}
             <div className="grid grid-cols-2 gap-8 mb-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-gold mb-2">20+</div>
-                <div className="text-text-subtle">Anos de Experiência</div>
+                <div className="text-3xl font-bold text-accent-gold mb-2">100%</div>
+                <div className="text-text-subtle">Carros Inspecionados</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent-gold mb-2">1000+</div>
-                <div className="text-text-subtle">Veículos Vendidos</div>
+                <div className="text-3xl font-bold text-accent-gold mb-2">0</div>
+                <div className="text-text-subtle">Surpresas Desagradáveis</div>
               </div>
             </div>
 
             <button className="btn-primary">
-              Conheça a Nossa História
+              Veja Como Trabalhamos
             </button>
           </motion.div>
 

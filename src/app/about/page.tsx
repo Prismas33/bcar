@@ -5,55 +5,55 @@ import { Award, Users, Shield, Clock, CheckCircle } from 'lucide-react';
 
 export default function AboutPage() {
   const milestones = [
-    { year: '2000', title: 'Fundação', description: 'BCar é fundada em Lisboa com o objetivo de revolucionar o mercado automóvel de luxo.' },
-    { year: '2005', title: 'Expansão', description: 'Abertura da segunda loja no Porto, expandindo a presença nacional.' },
-    { year: '2010', title: 'Certificação', description: 'Obtemos a certificação de excelência no atendimento ao cliente.' },
-    { year: '2015', title: 'Inovação', description: 'Lançamos a primeira plataforma digital de vendas online em Portugal.' },
-    { year: '2020', title: '1000+ Clientes', description: 'Alcançamos a marca de mais de 1000 clientes satisfeitos.' },
-    { year: '2024', title: 'Liderança', description: 'Consolidamos a posição como líder no segmento premium.' },
+    { year: '2024', title: 'Início', description: 'BCar nasce com a missão de democratizar o acesso a carros de qualidade.' },
+    { year: '2024', title: 'Primeiro Stock', description: 'Selecionamos cuidadosamente os primeiros 50 carros usados de qualidade.' },
+    { year: '2024', title: 'Transparência Total', description: 'Implementamos política de 100% transparência na inspeção de veículos.' },
+    { year: '2025', title: 'Crescimento', description: 'Expandimos a nossa seleção para atender todos os orçamentos.' },
+    { year: '2025', title: 'Confiança', description: 'Construímos uma base sólida de clientes satisfeitos.' },
+    { year: 'Futuro', title: 'Expansão', description: 'Planos para nos tornarmos a referência nacional em carros usados.' },
   ];
 
   const team = [
     {
       name: 'Carlos Silva',
-      position: 'CEO & Fundador',
-      experience: '25+ anos',
-      description: 'Visionário da empresa, especialista em veículos de luxo.',
+      position: 'Fundador',
+      experience: 'Novo no mercado',
+      description: 'Empreendedor com paixão por carros e transparência nos negócios.',
     },
     {
       name: 'Ana Costa',
-      position: 'Diretora de Vendas',
-      experience: '15+ anos',
-      description: 'Especialista em atendimento personalizado e negociação.',
+      position: 'Especialista em Vendas',
+      experience: 'Atendimento focado',
+      description: 'Dedicada a encontrar o carro perfeito para cada orçamento.',
     },
     {
       name: 'Miguel Santos',
-      position: 'Diretor Técnico',
-      experience: '20+ anos',
-      description: 'Perito em avaliação e certificação de veículos premium.',
+      position: 'Inspetor Técnico',
+      experience: 'Qualidade garantida',
+      description: 'Responsável por garantir que cada carro atende aos nossos padrões.',
     },
   ];
 
   const values = [
     {
       icon: Award,
-      title: 'Excelência',
-      description: 'Compromisso inabalável com a qualidade em todos os aspetos do nosso serviço.',
+      title: 'Qualidade',
+      description: 'Compromisso com a excelência em cada carro usado que oferecemos.',
     },
     {
       icon: Shield,
-      title: 'Confiança',
-      description: 'Transparência total e honestidade em todas as nossas transações.',
+      title: 'Transparência',
+      description: 'Honestidade total em todos os negócios, sem surpresas desagradáveis.',
     },
     {
       icon: Users,
-      title: 'Relacionamento',
-      description: 'Construímos relações duradouras baseadas na confiança mútua.',
+      title: 'Acessibilidade',
+      description: 'Carros para todos os orçamentos, mantendo sempre a qualidade.',
     },
     {
       icon: Clock,
-      title: 'Tradição',
-      description: 'Mais de 20 anos de experiência e conhecimento do mercado.',
+      title: 'Confiança',
+      description: 'Cada carro é testado e inspecionado antes de chegar até si.',
     },
   ];
 
@@ -72,8 +72,9 @@ export default function AboutPage() {
               A Nossa <span className="text-gradient">História</span>
             </h1>
             <p className="text-xl md:text-2xl text-text-subtle max-w-4xl mx-auto leading-relaxed">
-              Há mais de duas décadas, a BCar tem sido sinónimo de excelência, 
-              confiança e inovação no mercado automóvel de luxo em Portugal.
+              A BCar é um novo conceito no mercado automóvel português, 
+              focado em democratizar o acesso a carros usados de qualidade 
+              com total transparência e honestidade.
             </p>
           </motion.div>
         </div>
@@ -94,8 +95,8 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-serif font-bold text-text-primary mb-4">Missão</h3>
               <p className="text-text-subtle leading-relaxed">
-                Proporcionar uma experiência única na aquisição de veículos de luxo, 
-                combinando excelência no atendimento com transparência total.
+                Tornar carros de qualidade acessíveis a todos os orçamentos, 
+                mantendo sempre a transparência e honestidade em cada negócio.
               </p>
             </motion.div>
 
@@ -110,8 +111,8 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-serif font-bold text-text-primary mb-4">Visão</h3>
               <p className="text-text-subtle leading-relaxed">
-                Ser reconhecida como a referência no mercado automóvel de luxo, 
-                expandindo a nossa presença e mantendo os mais altos padrões de qualidade.
+                Ser reconhecida como a referência em carros usados de confiança, 
+                expandindo o acesso a veículos de qualidade por todo o país.
               </p>
             </motion.div>
 
@@ -147,7 +148,7 @@ export default function AboutPage() {
               A Nossa <span className="text-gradient">Jornada</span>
             </h2>
             <p className="text-xl text-text-subtle max-w-3xl mx-auto">
-              Acompanhe os momentos mais importantes da nossa trajetória ao longo de mais de 20 anos.
+              Acompanhe os momentos mais importantes da nossa jornada desde o início.
             </p>
           </motion.div>
 
@@ -227,7 +228,7 @@ export default function AboutPage() {
                 </div>
                 
                 <div className="text-text-subtle text-sm mb-4">
-                  {member.experience} de experiência
+                  {member.experience}
                 </div>
                 
                 <p className="text-text-subtle text-sm leading-relaxed">
@@ -301,9 +302,9 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: 'ISO 9001:2015', description: 'Certificação de Qualidade' },
-              { title: 'Prémio Excelência', description: 'Atendimento ao Cliente 2023' },
-              { title: 'Top Dealer', description: 'Veículos de Luxo Portugal' },
+              { title: 'Transparência Total', description: 'Política de Honestidade' },
+              { title: 'Satisfação Cliente', description: '100% Carros Inspecionados' },
+              { title: 'Preços Justos', description: 'Carros Usados de Qualidade' },
             ].map((cert, index) => (
               <motion.div
                 key={cert.title}

@@ -35,39 +35,39 @@ function useCounter(end: number, duration: number = 2000, inView: boolean = fals
 
 export default function StatsSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.3 });
+  const isInView = useInView(ref, { once: true });
 
   const stats = [
     {
       icon: Diamond,
-      value: useCounter(500, 2000, isInView),
+      value: useCounter(50, 2000, isInView),
       suffix: '+',
-      label: 'Veículos de Luxo',
-      description: 'Coleção curada premium',
+      label: 'Carros Disponíveis',
+      description: 'Seleção cuidadosa',
       color: 'from-accent-gold to-accent-gold-light',
     },
     {
       icon: Users,
-      value: useCounter(2500, 2500, isInView),
-      suffix: '+',
-      label: 'Clientes Exclusivos',
-      description: 'Confiança conquistada',
+      value: useCounter(100, 2500, isInView),
+      suffix: '%',
+      label: 'Transparência',
+      description: 'Honestidade total',
       color: 'from-accent-platinum to-luxury-cream',
     },
     {
       icon: Trophy,
-      value: useCounter(98, 1800, isInView),
+      value: useCounter(100, 1800, isInView),
       suffix: '%',
-      label: 'Satisfação',
-      description: 'Excelência comprovada',
+      label: 'Inspecionados',
+      description: 'Qualidade garantida',
       color: 'from-accent-bronze to-accent-gold',
     },
     {
       icon: Award,
-      value: useCounter(25, 1500, isInView),
-      suffix: '+',
-      label: 'Anos de Prestígio',
-      description: 'Tradição e inovação',
+      value: useCounter(0, 1500, isInView),
+      suffix: '',
+      label: 'Enganação',
+      description: 'Política transparente',
       color: 'from-accent-gold to-accent-rose',
     },
   ];
@@ -75,18 +75,18 @@ export default function StatsSection() {
   const achievements = [
     {
       icon: Shield,
-      title: 'Certificação Premium',
-      description: 'Todos os veículos com garantia estendida'
+      title: 'Garantia Incluída',
+      description: 'Todos os carros com garantia de funcionamento'
     },
     {
       icon: Clock,
-      title: 'Concierge 24/7',
-      description: 'Atendimento personalizado sempre disponível'
+      title: 'Apoio Completo',
+      description: 'Suporte durante todo o processo de compra'
     },
     {
       icon: Star,
-      title: 'Avaliação 5 Estrelas',
-      description: 'Reconhecimento internacional'
+      title: 'Qualidade Testada',
+      description: 'Cada carro é inspecionado antes da venda'
     },
   ];
 
@@ -142,9 +142,9 @@ export default function StatsSection() {
           />
           
           <p className="text-xl md:text-2xl text-text-subtle max-w-4xl mx-auto leading-relaxed">
-            Duas décadas definindo o padrão de 
-            <span className="text-accent-gold font-semibold"> excelência automobilística</span> e 
-            <span className="text-accent-gold font-semibold"> serviço incomparável</span>.
+            Um novo conceito definindo o padrão de 
+            <span className="text-accent-gold font-semibold"> transparência automobilística</span> e 
+            <span className="text-accent-gold font-semibold"> preços justos</span>.
           </p>
         </motion.div>
 
@@ -266,8 +266,8 @@ export default function StatsSection() {
               </motion.div>
 
               <blockquote className="text-2xl md:text-3xl font-serif italic text-text-primary mb-8 max-w-4xl">
-                "BCar não é apenas um concessionário, é uma experiência de vida. 
-                Cada detalhe é pensado para superar expectativas e criar memórias inesquecíveis."
+                "BCar é honestidade pura. Encontrei exatamente o que procurava, 
+                sem surpresas, com transparência total e preço justo."
               </blockquote>
               
               <div className="flex items-center justify-center space-x-4">

@@ -31,7 +31,7 @@ export default function FeaturedVehicles() {
       scale: 1,
       transition: { 
         duration: 0.8,
-        type: "spring",
+        type: "spring" as const,
         bounce: 0.3
       },
     },
@@ -84,13 +84,13 @@ export default function FeaturedVehicles() {
             className="inline-flex items-center space-x-2 glass-luxury px-6 py-3 mb-8"
           >
             <Star className="h-5 w-5 text-accent-gold" />
-            <span className="text-accent-gold font-semibold">Coleção Exclusiva</span>
+            <span className="text-accent-gold font-semibold">Seleção Especial</span>
             <div className="w-2 h-2 bg-accent-gold rounded-full animate-pulse"></div>
           </motion.div>
 
           <h2 className="text-5xl md:text-7xl font-black font-serif text-text-primary mb-6 tracking-tight">
-            Obras-Primas
-            <span className="block text-gradient">Automobilísticas</span>
+            Carros Selecionados
+            <span className="block text-gradient">Para Si</span>
           </h2>
           
           <motion.div
@@ -101,9 +101,9 @@ export default function FeaturedVehicles() {
           />
           
           <p className="text-xl md:text-2xl text-text-subtle max-w-4xl mx-auto leading-relaxed">
-            Cada veículo da nossa coleção é uma manifestação única de 
-            <span className="text-accent-gold font-semibold"> excelência, artesanato</span> e 
-            <span className="text-accent-gold font-semibold"> performance excepcional</span>.
+            Cada veículo da nossa seleção é cuidadosamente inspecionado para garantir 
+            <span className="text-accent-gold font-semibold"> qualidade, fiabilidade</span> e 
+            <span className="text-accent-gold font-semibold"> valor justo</span>.
           </p>
         </motion.div>
 
@@ -295,12 +295,12 @@ export default function FeaturedVehicles() {
         >
           <div className="glass-luxury p-12 rounded-3xl max-w-4xl mx-auto">
             <h3 className="text-3xl md:text-4xl font-serif font-bold text-text-primary mb-6">
-              Pronto para a <span className="text-gradient">Experiência Definitiva</span>?
+              Pronto para <span className="text-gradient">Encontrar o Seu Carro</span>?
             </h3>
             
             <p className="text-xl text-text-subtle mb-8 max-w-2xl mx-auto">
-              Explore toda a nossa coleção curada de veículos de luxo e encontre 
-              a perfeição que define o seu estilo único.
+              Explore toda a nossa seleção de carros usados de qualidade e encontre 
+              o veículo perfeito para o seu orçamento.
             </p>
             
             <motion.div

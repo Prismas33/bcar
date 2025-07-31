@@ -58,7 +58,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-lg font-semibold text-text-primary mb-1">Endereço</h3>
                   <p className="text-text-subtle">
-                    Rua do Luxo, 123<br />
+                    Rua dos Carros, 123<br />
                     1000-001 Lisboa<br />
                     Portugal
                   </p>

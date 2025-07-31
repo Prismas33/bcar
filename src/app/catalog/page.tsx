@@ -56,7 +56,7 @@ export default function CatalogPage() {
             Catálogo de <span className="text-gradient">Veículos</span>
           </h1>
           <p className="text-xl text-text-subtle max-w-3xl mx-auto">
-            Explore a nossa coleção exclusiva de veículos de luxo. 
+            Explore a nossa seleção de carros usados de qualidade. 
             Use os filtros abaixo para encontrar o seu veículo ideal.
           </p>
         </motion.div>
