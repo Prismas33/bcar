@@ -87,8 +87,8 @@ export default function ContactPage() {
                 <div>
                   <h3 className="text-lg font-semibold text-text-primary mb-1">Email</h3>
                   <p className="text-text-subtle">
-                    info@carluxury.pt<br />
-                    vendas@carluxury.pt
+                    info@bcar.pt<br />
+                    vendas@bcar.pt
                   </p>
                 </div>
               </div>

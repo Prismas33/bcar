@@ -38,11 +38,11 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-text-primary mb-6">
-              Sobre a <span className="text-gradient">CarLuxury</span>
+              Sobre a <span className="text-gradient">BCar</span>
             </h2>
             
             <p className="text-xl text-text-subtle mb-8 leading-relaxed">
-              Há mais de duas décadas, a CarLuxury tem sido sinónimo de excelência 
+              Há mais de duas décadas, a BCar tem sido sinónimo de excelência 
               no mercado automóvel de luxo em Portugal. Especializamo-nos em oferecer 
               veículos premium cuidadosamente selecionados, garantindo qualidade, 
               elegância e performance incomparáveis.
@@ -119,7 +119,7 @@ export default function AboutSection() {
 
             <div className="space-y-12">
               {[
-                { year: '2000', event: 'Fundação da CarLuxury em Lisboa' },
+                { year: '2000', event: 'Fundação da BCar em Lisboa' },
                 { year: '2010', event: 'Expansão para todo o território nacional' },
                 { year: '2015', event: 'Certificação de excelência no atendimento' },
                 { year: '2020', event: 'Lançamento da plataforma digital' },

@@ -266,7 +266,7 @@ export default function StatsSection() {
               </motion.div>
 
               <blockquote className="text-2xl md:text-3xl font-serif italic text-text-primary mb-8 max-w-4xl">
-                "CarLuxury não é apenas um concessionário, é uma experiência de vida. 
+                "BCar não é apenas um concessionário, é uma experiência de vida. 
                 Cada detalhe é pensado para superar expectativas e criar memórias inesquecíveis."
               </blockquote>
               

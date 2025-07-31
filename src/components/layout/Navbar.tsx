@@ -24,7 +24,7 @@ export function Navbar() {
             <Link href="/" className="flex items-center space-x-2">
               <Car className="h-8 w-8 text-accent-gold" />
               <span className="text-2xl font-serif font-bold text-gradient">
-                CarLuxury
+                BCar
               </span>
             </Link>
           </div>
@@ -47,9 +47,9 @@ export function Navbar() {
                 <Phone className="h-4 w-4" />
                 <span className="text-sm">+351 000 000 000</span>
               </a>
-              <a href="mailto:info@carluxury.pt" className="flex items-center space-x-1 text-text-subtle hover:text-accent-gold transition-colors">
+              <a href="mailto:info@bcar.pt" className="flex items-center space-x-1 text-text-subtle hover:text-accent-gold transition-colors">
                 <Mail className="h-4 w-4" />
-                <span className="text-sm">info@carluxury.pt</span>
+                <span className="text-sm">info@bcar.pt</span>
               </a>
             </div>
           </div>
@@ -91,9 +91,9 @@ export function Navbar() {
                 <Phone className="h-4 w-4" />
                 <span>+351 000 000 000</span>
               </a>
-              <a href="mailto:info@carluxury.pt" className="flex items-center space-x-2 text-text-subtle">
+              <a href="mailto:info@bcar.pt" className="flex items-center space-x-2 text-text-subtle">
                 <Mail className="h-4 w-4" />
-                <span>info@carluxury.pt</span>
+                <span>info@bcar.pt</span>
               </a>
             </div>
           </div>

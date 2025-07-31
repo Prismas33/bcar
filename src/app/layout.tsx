@@ -3,7 +3,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 
 export const metadata = {
-  title: 'CarLuxury - Stand Automóvel de Luxo',
+  title: 'BCar - Stand Automóvel de Luxo',
   description: 'Stand automóvel de alta gama com os melhores veículos de luxo em Portugal.',
 };
 

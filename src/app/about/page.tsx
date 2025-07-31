@@ -5,7 +5,7 @@ import { Award, Users, Shield, Clock, CheckCircle } from 'lucide-react';
 
 export default function AboutPage() {
   const milestones = [
-    { year: '2000', title: 'Fundação', description: 'CarLuxury é fundada em Lisboa com o objetivo de revolucionar o mercado automóvel de luxo.' },
+    { year: '2000', title: 'Fundação', description: 'BCar é fundada em Lisboa com o objetivo de revolucionar o mercado automóvel de luxo.' },
     { year: '2005', title: 'Expansão', description: 'Abertura da segunda loja no Porto, expandindo a presença nacional.' },
     { year: '2010', title: 'Certificação', description: 'Obtemos a certificação de excelência no atendimento ao cliente.' },
     { year: '2015', title: 'Inovação', description: 'Lançamos a primeira plataforma digital de vendas online em Portugal.' },
@@ -72,7 +72,7 @@ export default function AboutPage() {
               A Nossa <span className="text-gradient">História</span>
             </h1>
             <p className="text-xl md:text-2xl text-text-subtle max-w-4xl mx-auto leading-relaxed">
-              Há mais de duas décadas, a CarLuxury tem sido sinónimo de excelência, 
+              Há mais de duas décadas, a BCar tem sido sinónimo de excelência, 
               confiança e inovação no mercado automóvel de luxo em Portugal.
             </p>
           </motion.div>
@@ -200,7 +200,7 @@ export default function AboutPage() {
               A Nossa <span className="text-gradient">Equipa</span>
             </h2>
             <p className="text-xl text-text-subtle max-w-3xl mx-auto">
-              Conheça os profissionais experientes que tornam a CarLuxury uma referência no mercado.
+              Conheça os profissionais experientes que tornam a BCar uma referência no mercado.
             </p>
           </motion.div>
 

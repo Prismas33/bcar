@@ -11,7 +11,7 @@ export function Footer() {
             <div className="flex items-center space-x-2 mb-4">
               <Car className="h-8 w-8 text-accent-gold" />
               <span className="text-2xl font-serif font-bold text-gradient">
-                CarLuxury
+                BCar
               </span>
             </div>
             <p className="text-text-subtle mb-6 max-w-md">
@@ -78,7 +78,7 @@ export function Footer() {
               </div>
               <div className="flex items-center space-x-2 text-text-subtle">
                 <Mail className="h-5 w-5 text-accent-gold" />
-                <span>info@carluxury.pt</span>
+                <span>info@bcar.pt</span>
               </div>
             </div>
           </div>
@@ -88,7 +88,7 @@ export function Footer() {
         <div className="border-t border-accent-gold/20 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-text-subtle text-sm">
-              © 2024 CarLuxury. Todos os direitos reservados.
+              © 2024 BCar. Todos os direitos reservados.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/privacy" className="text-text-subtle hover:text-accent-gold text-sm transition-colors">
