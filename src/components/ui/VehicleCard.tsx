@@ -68,16 +68,30 @@ export function VehicleCard({
             scale: isHovered ? 1.1 : 1,
           }}
           transition={{ duration: 0.6 }}
-          className="w-full h-full bg-gradient-to-br from-secondary-200 to-secondary-300 flex items-center justify-center relative"
+          className="w-full h-full relative"
         >
-          {/* Car Icon with Animation */}
+          {/* Vehicle Image */}
+          <img
+            src={vehicle.imagens[0]}
+            alt={`${vehicle.marca} ${vehicle.modelo}`}
+            className="w-full h-full object-cover object-center"
+            onError={(e) => {
+              // Fallback para emoji se a imagem não carregar
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+              const fallback = target.nextElementSibling as HTMLElement;
+              if (fallback) fallback.style.display = 'flex';
+            }}
+          />
+          
+          {/* Fallback Car Icon (hidden by default) */}
           <motion.div
             animate={{ 
               rotateY: isHovered ? [0, 15, 0] : 0,
               scale: isHovered ? 1.2 : 1
             }}
             transition={{ duration: 0.8 }}
-            className="text-accent-gold text-5xl relative z-10"
+            className="hidden w-full h-full bg-gradient-to-br from-secondary-200 to-secondary-300 items-center justify-center text-accent-gold text-5xl relative z-10"
           >
             🚗
           </motion.div>

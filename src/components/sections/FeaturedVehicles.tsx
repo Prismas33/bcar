@@ -128,8 +128,25 @@ export default function FeaturedVehicles() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                   {/* Vehicle Image */}
                   <div className="relative">
-                    <div className="aspect-[4/3] bg-gradient-to-br from-secondary-200 to-secondary-300 rounded-2xl overflow-hidden border border-accent-gold/30">
-                      <div className="w-full h-full flex items-center justify-center">
+                    <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-accent-gold/30">
+                      <motion.img
+                        key={`image-${selectedVehicle}`}
+                        src={featuredVehicles[selectedVehicle]?.imagens[0]}
+                        alt={`${featuredVehicles[selectedVehicle]?.marca} ${featuredVehicles[selectedVehicle]?.modelo}`}
+                        initial={{ opacity: 0, scale: 1.1 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8 }}
+                        className="w-full h-full object-cover object-center"
+                        onError={(e) => {
+                          // Fallback para emoji se a imagem não carregar
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      {/* Fallback emoji (hidden by default) */}
+                      <div className="hidden w-full h-full bg-gradient-to-br from-secondary-200 to-secondary-300 items-center justify-center">
                         <motion.div
                           animate={{ 
                             scale: [1, 1.1, 1],

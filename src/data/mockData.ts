@@ -14,9 +14,9 @@ export const mockVehicles: Vehicle[] = [
     status: 'disponivel',
     destaque: true,
     imagens: [
-      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&h=600&fit=crop'
+      '/images/carros-mok/porshe.png',
+      '/images/carros-mok/porshe.png',
+      '/images/carros-mok/porshe.png'
     ],
     descricao: 'O Porsche 911 Carrera S é a definição de excelência automotiva. Com motor boxer 3.0L biturbo que desenvolve 450 cavalos, este ícone alemão combina tradição e inovação em cada detalhe.',
     especificacoes: {
@@ -58,9 +58,9 @@ export const mockVehicles: Vehicle[] = [
     status: 'disponivel',
     destaque: true,
     imagens: [
-      'https://images.unsplash.com/photo-1614200187524-dc4b892acf16?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1616788494707-ec4fe3103de3?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&h=600&fit=crop'
+      '/images/carros-mok/ferrari.png',
+      '/images/carros-mok/ferrari.png',
+      '/images/carros-mok/ferrari.png'
     ],
     descricao: 'A Ferrari F8 Tributo representa o ápice da engenharia italiana. Seu V8 twin-turbo de 720 cavalos oferece uma experiência de condução incomparável, combinando performance explosiva com elegância refinada.',
     especificacoes: {
@@ -102,9 +102,9 @@ export const mockVehicles: Vehicle[] = [
     status: 'disponivel',
     destaque: false,
     imagens: [
-      'https://images.unsplash.com/photo-1556189250-72ba954cfc2b?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1592840062661-de8b930d3c56?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&h=600&fit=crop'
+      '/images/carros-mok/lambo.jpg',
+      '/images/carros-mok/lambo.jpg',
+      '/images/carros-mok/lambo.jpg'
     ],
     descricao: 'O Lamborghini Huracán EVO é uma obra-prima da engenharia italiana que combina o rugido selvagem do V10 naturalmente aspirado com tecnologia de ponta e design agressivo.',
     especificacoes: {
@@ -146,9 +146,9 @@ export const mockVehicles: Vehicle[] = [
     status: 'disponivel',
     destaque: false,
     imagens: [
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1555618142-db15c4799637?w=800&h=600&fit=crop'
+      '/images/carros-mok/bmw.jpg',
+      '/images/carros-mok/bmw.jpg',
+      '/images/carros-mok/bmw.jpg'
     ],
     descricao: 'O BMW M8 Competition representa o equilíbrio perfeito entre luxo e performance. Seu V8 biturbo entrega potência brutal enquanto mantém o conforto e sofisticação típicos da BMW.',
     especificacoes: {
@@ -190,9 +190,9 @@ export const mockVehicles: Vehicle[] = [
     status: 'disponivel',
     destaque: false,
     imagens: [
-      'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1615906655593-ad0386982a0f?w=800&h=600&fit=crop'
+      '/images/carros-mok/mercedes.webp',
+      '/images/carros-mok/mercedes.webp',
+      '/images/carros-mok/mercedes.webp'
     ],
     descricao: 'O Mercedes-AMG GT 63 S é um grand tourer de alta performance que une a elegância Mercedes com a brutalidade AMG. Perfeito para quem busca conforto e velocidade em doses iguais.',
     especificacoes: {
@@ -234,9 +234,9 @@ export const mockVehicles: Vehicle[] = [
     status: 'disponivel',
     destaque: false,
     imagens: [
-      'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1614165936126-8c1e0b3df75c?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1614026480371-5b65a2b9f236?w=800&h=600&fit=crop'
+      '/images/carros-mok/2024-audi-rs7-performance-review.jpg',
+      '/images/carros-mok/2024-audi-rs7-performance-review.jpg',
+      '/images/carros-mok/2024-audi-rs7-performance-review.jpg'
     ],
     descricao: 'O Audi RS7 Sportback é a definição de versatilidade esportiva. Combina o design elegante de um coupé com a praticidade de um hatchback e a performance devastadora da divisão RS.',
     especificacoes: {
