@@ -1,6 +1,7 @@
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
+import { MobileBottomNav } from '@/components/ui/MobileBottomNav';
 
 export const metadata = {
   title: 'BCar - Carros Usados de Qualidade',
@@ -14,12 +15,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt">
-      <body className="bg-primary text-text-primary font-sans">
+      <body className="bg-primary text-text-primary font-sans no-scroll-x">
         <Navbar />
         <main className="min-h-screen">
           {children}
         </main>
         <Footer />
+        <MobileBottomNav />
       </body>
     </html>
   );

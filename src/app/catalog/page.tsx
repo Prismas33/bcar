@@ -2,10 +2,12 @@
 
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter } from 'lucide-react';
+import { Search, Filter, ArrowRight } from 'lucide-react';
 import { mockVehicles } from '@/data/mockData';
 import { VehicleCard } from '@/components/ui/VehicleCard';
+import { MobileFilters } from '@/components/ui/MobileFilters';
 import { Button } from '@/components/ui/Button';
+import { formatPrice, getStatusLabel, getFuelLabel } from '@/lib/utils/cn';
 
 export default function CatalogPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -61,12 +63,12 @@ export default function CatalogPage() {
           </p>
         </motion.div>
 
-        {/* Search and Filters */}
+        {/* Search and Filters - Desktop */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-secondary-100 rounded-xl p-6 mb-8 border border-accent-gold/20"
+          className="hidden lg:block bg-secondary-100 rounded-xl p-6 mb-8 border border-accent-gold/20"
         >
           {/* Search Bar */}
           <div className="relative mb-6">
@@ -80,7 +82,7 @@ export default function CatalogPage() {
             />
           </div>
 
-          {/* Filters */}
+          {/* Desktop Filters */}
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             <select
               value={filters.marca}
@@ -114,11 +116,11 @@ export default function CatalogPage() {
               onChange={(e) => setFilters({ ...filters, combustivel: e.target.value })}
               className="px-4 py-3 bg-primary border border-accent-gold/20 rounded-lg text-text-primary focus:outline-none focus:border-accent-gold"
             >
-              <option value="">Tipo de Combustível</option>
+              <option value="">Combustível</option>
               <option value="gasolina">Gasolina</option>
               <option value="diesel">Diesel</option>
+              <option value="hibrido">Híbrido</option>
               <option value="eletrico">Elétrico</option>
-              <option value="hybrid">Híbrido</option>
             </select>
 
             <select
@@ -126,13 +128,40 @@ export default function CatalogPage() {
               onChange={(e) => setFilters({ ...filters, status: e.target.value })}
               className="px-4 py-3 bg-primary border border-accent-gold/20 rounded-lg text-text-primary focus:outline-none focus:border-accent-gold"
             >
-              <option value="">Todos os Status</option>
-              <option value="available">Disponível</option>
-              <option value="reserved">Reservado</option>
-              <option value="negotiating">Em Negociação</option>
+              <option value="">Todos</option>
+              <option value="disponivel">Disponível</option>
+              <option value="reservado">Reservado</option>
+              <option value="vendido">Vendido</option>
             </select>
           </div>
         </motion.div>
+
+        {/* Mobile Search Only */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="lg:hidden bg-secondary-100 rounded-xl p-4 mb-6 border border-accent-gold/20"
+        >
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-text-subtle" />
+            <input
+              type="text"
+              placeholder="Pesquisar carros..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-10 pr-4 py-3 bg-primary border border-accent-gold/20 rounded-lg text-text-primary placeholder-text-subtle focus:outline-none focus:border-accent-gold"
+            />
+          </div>
+        </motion.div>
+
+        {/* Mobile Filters Component */}
+        <MobileFilters
+          filters={filters}
+          onFiltersChange={setFilters}
+          brands={brands}
+          resultsCount={filteredVehicles.length}
+        />
 
         {/* Results Info */}
         <motion.div
@@ -154,12 +183,12 @@ export default function CatalogPage() {
           </select>
         </motion.div>
 
-        {/* Vehicle Grid */}
+        {/* Vehicle Grid - Desktop */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 pb-20 lg:pb-8"
         >
           {filteredVehicles.map((vehicle, index) => (
             <motion.div
@@ -173,6 +202,113 @@ export default function CatalogPage() {
                 onViewDetails={handleViewDetails}
                 showStatus={true}
               />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Vehicle List - Mobile Only */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="sm:hidden space-y-4 pb-20"
+        >
+          {filteredVehicles.map((vehicle, index) => (
+            <motion.div
+              key={vehicle.id}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              onClick={() => handleViewDetails(vehicle.id)}
+              className="bg-secondary-100 border border-accent-gold/20 rounded-xl p-4 hover:border-accent-gold/40 transition-all duration-300 cursor-pointer"
+            >
+              <div className="flex space-x-4">
+                {/* Imagem pequena à esquerda */}
+                <div className="w-20 h-16 flex-shrink-0 relative rounded-lg overflow-hidden">
+                  <img
+                    src={vehicle.imagens[0]}
+                    alt={`${vehicle.marca} ${vehicle.modelo}`}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      const fallback = target.nextElementSibling as HTMLElement;
+                      if (fallback) fallback.style.display = 'flex';
+                    }}
+                  />
+                  <div className="hidden w-full h-full bg-gradient-to-br from-secondary-200 to-secondary-300 items-center justify-center text-accent-gold text-xl">
+                    🚗
+                  </div>
+                  
+                  {/* Status badge overlay */}
+                  {vehicle.status !== 'disponivel' && (
+                    <div className="absolute top-0 right-0 w-3 h-3 rounded-full border border-white" 
+                         style={{
+                           backgroundColor: vehicle.status === 'reservado' ? '#fbbf24' : 
+                                          vehicle.status === 'vendido' ? '#ef4444' : '#3b82f6'
+                         }}>
+                    </div>
+                  )}
+                </div>
+
+                {/* Características à direita */}
+                <div className="flex-1 min-w-0">
+                  {/* Título e preço */}
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-sm font-bold text-text-primary truncate">
+                        {vehicle.marca} {vehicle.modelo}
+                      </h3>
+                      <p className="text-lg font-black text-accent-gold">
+                        {formatPrice(vehicle.preco)}
+                      </p>
+                    </div>
+                    
+                    {/* Premium badge */}
+                    {vehicle.destaque && (
+                      <div className="w-6 h-6 bg-accent-gold/20 rounded-full flex items-center justify-center ml-2">
+                        <span className="text-accent-gold text-xs">★</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Especificações essenciais em linha */}
+                  <div className="flex items-center space-x-4 text-xs text-text-subtle">
+                    <div className="flex items-center space-x-1">
+                      <span>📅</span>
+                      <span>{vehicle.ano}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <span>📊</span>
+                      <span>{(vehicle.quilometragem / 1000).toFixed(0)}k km</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <span>⛽</span>
+                      <span className="truncate max-w-[60px]">{getFuelLabel(vehicle.combustivel)}</span>
+                    </div>
+                  </div>
+
+                  {/* Status text (se não for disponível) */}
+                  {vehicle.status !== 'disponivel' && (
+                    <div className="mt-1">
+                      <span className={`text-xs px-2 py-1 rounded-full ${
+                        vehicle.status === 'reservado' 
+                          ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
+                          : vehicle.status === 'vendido'
+                          ? 'bg-red-500/20 text-red-400 border border-red-500/30'
+                          : 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                      }`}>
+                        {getStatusLabel(vehicle.status)}
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Seta de ação */}
+                <div className="flex items-center justify-center w-8">
+                  <ArrowRight className="h-4 w-4 text-accent-gold/60" />
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>

@@ -194,73 +194,73 @@ export function VehicleCard({
         </AnimatePresence>
       </div>
 
-      {/* Content Section */}
-      <div className="p-6 relative">
-        {/* Vehicle Title */}
+      {/* Content Section - Responsive padding */}
+      <div className="p-4 sm:p-6 relative">
+        {/* Vehicle Title - Responsive sizing */}
         <motion.h3
           animate={{ color: isHovered ? '#b8860b' : '#ffffff' }}
-          className="text-xl md:text-2xl font-serif font-bold mb-2 transition-colors"
+          className="text-lg sm:text-xl md:text-2xl font-serif font-bold mb-2 transition-colors leading-tight"
         >
           {vehicle.marca} {vehicle.modelo}
         </motion.h3>
         
-        {/* Price with Animation */}
+        {/* Price with Animation - Responsive sizing */}
         <motion.div
           animate={{ scale: isHovered ? 1.05 : 1 }}
-          className="text-2xl md:text-3xl font-black text-gradient mb-6"
+          className="text-xl sm:text-2xl md:text-3xl font-black text-gradient mb-4 sm:mb-6"
         >
           {formatPrice(vehicle.preco)}
         </motion.div>
 
-        {/* Specifications Grid */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        {/* Specifications Grid - Responsive layout */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 sm:gap-4 mb-6">
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2 glass-luxury p-3 rounded-lg"
+            className="flex items-center space-x-2 glass-luxury p-2 sm:p-3 rounded-lg"
           >
-            <Calendar className="h-4 w-4 text-accent-gold" />
-            <div>
+            <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-accent-gold flex-shrink-0" />
+            <div className="min-w-0">
               <div className="text-xs text-text-subtle">Ano</div>
-              <div className="text-text-primary font-semibold">{vehicle.ano}</div>
+              <div className="text-text-primary font-semibold text-sm sm:text-base">{vehicle.ano}</div>
             </div>
           </motion.div>
           
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2 glass-luxury p-3 rounded-lg"
+            className="flex items-center space-x-2 glass-luxury p-2 sm:p-3 rounded-lg"
           >
-            <Gauge className="h-4 w-4 text-accent-gold" />
-            <div>
+            <Gauge className="h-3 w-3 sm:h-4 sm:w-4 text-accent-gold flex-shrink-0" />
+            <div className="min-w-0">
               <div className="text-xs text-text-subtle">KM</div>
-              <div className="text-text-primary font-semibold">{(vehicle.quilometragem / 1000).toFixed(0)}k</div>
+              <div className="text-text-primary font-semibold text-sm sm:text-base">{(vehicle.quilometragem / 1000).toFixed(0)}k</div>
             </div>
           </motion.div>
           
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2 glass-luxury p-3 rounded-lg"
+            className="flex items-center space-x-2 glass-luxury p-2 sm:p-3 rounded-lg"
           >
-            <Fuel className="h-4 w-4 text-accent-gold" />
-            <div>
+            <Fuel className="h-3 w-3 sm:h-4 sm:w-4 text-accent-gold flex-shrink-0" />
+            <div className="min-w-0">
               <div className="text-xs text-text-subtle">Combustível</div>
-              <div className="text-text-primary font-semibold">{getFuelLabel(vehicle.combustivel)}</div>
+              <div className="text-text-primary font-semibold text-sm sm:text-base truncate">{getFuelLabel(vehicle.combustivel)}</div>
             </div>
           </motion.div>
           
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2 glass-luxury p-3 rounded-lg"
+            className="flex items-center space-x-2 glass-luxury p-2 sm:p-3 rounded-lg"
           >
-            <Palette className="h-4 w-4 text-accent-gold" />
-            <div>
+            <Palette className="h-3 w-3 sm:h-4 sm:w-4 text-accent-gold flex-shrink-0" />
+            <div className="min-w-0">
               <div className="text-xs text-text-subtle">Cor</div>
-              <div className="text-text-primary font-semibold">{vehicle.cor}</div>
+              <div className="text-text-primary font-semibold text-sm sm:text-base truncate">{vehicle.cor}</div>
             </div>
           </motion.div>
         </div>
 
-        {/* Rating Stars */}
-        <div className="flex items-center space-x-1 mb-6">
+        {/* Rating Stars - Mobile optimized */}
+        <div className="flex items-center space-x-1 mb-4 sm:mb-6">
           {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
@@ -268,14 +268,14 @@ export function VehicleCard({
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: i * 0.1 }}
             >
-              <Star className="h-4 w-4 text-accent-gold fill-current" />
+              <Star className="h-3 w-3 sm:h-4 sm:w-4 text-accent-gold fill-current" />
             </motion.div>
           ))}
-          <span className="text-text-subtle text-sm ml-2">Certificado Premium</span>
+          <span className="text-text-subtle text-xs sm:text-sm ml-1 sm:ml-2">Certificado Premium</span>
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex space-x-3">
+        {/* Action Buttons - More mobile-friendly */}
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -284,14 +284,15 @@ export function VehicleCard({
             <Button
               variant="secondary"
               size="sm"
-              className="w-full text-sm font-medium"
+              className="w-full text-xs sm:text-sm font-medium py-2 sm:py-3"
               onClick={(e) => {
                 e.stopPropagation();
                 // Quick info modal
               }}
             >
-              <Settings className="h-4 w-4 mr-2" />
-              Especificações
+              <Settings className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" />
+              <span className="hidden sm:inline">Especificações</span>
+              <span className="sm:hidden">Specs</span>
             </Button>
           </motion.div>
           
@@ -303,14 +304,14 @@ export function VehicleCard({
             <Button
               variant="primary"
               size="sm"
-              className="w-full text-sm font-medium group"
+              className="w-full text-xs sm:text-sm font-medium group py-2 sm:py-3"
               onClick={(e) => {
                 e.stopPropagation();
                 onViewDetails?.(vehicle.id);
               }}
             >
               <span>Ver Detalhes</span>
-              <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 ml-1 sm:ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </motion.div>
         </div>

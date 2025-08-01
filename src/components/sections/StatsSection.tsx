@@ -91,7 +91,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section ref={ref} className="py-32 relative overflow-hidden">
+    <section ref={ref} className="pt-0 pb-16 md:pb-32 relative overflow-hidden">
       {/* Luxury Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-luxury-black via-secondary-200 to-luxury-charcoal">
@@ -117,7 +117,7 @@ export default function StatsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
           <motion.div
             initial={{ scale: 0 }}
@@ -129,7 +129,7 @@ export default function StatsSection() {
             <span className="text-accent-gold font-semibold">Números de Excelência</span>
           </motion.div>
 
-          <h2 className="text-5xl md:text-7xl font-black font-serif text-text-primary mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-5xl lg:text-7xl font-black font-serif text-text-primary mb-6 tracking-tight">
             Prestígio em
             <span className="block text-gradient">Números</span>
           </h2>
@@ -141,7 +141,7 @@ export default function StatsSection() {
             className="section-divider mx-auto mb-8"
           />
           
-          <p className="text-xl md:text-2xl text-text-subtle max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl lg:text-2xl text-text-subtle max-w-4xl mx-auto leading-relaxed">
             Um novo conceito definindo o padrão de 
             <span className="text-accent-gold font-semibold"> transparência automobilística</span> e 
             <span className="text-accent-gold font-semibold"> preços justos</span>.
@@ -149,7 +149,7 @@ export default function StatsSection() {
         </motion.div>
 
         {/* Main Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-12 md:mb-20">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -164,29 +164,29 @@ export default function StatsSection() {
               viewport={{ once: true }}
               className="group"
             >
-              <div className="card-showcase p-8 h-full">
+              <div className="card-showcase p-4 md:p-8 h-full">
                 {/* Icon with Gradient Background */}
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className={`inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br ${stat.color} rounded-2xl mb-6 shadow-luxury`}
+                  className={`inline-flex items-center justify-center w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br ${stat.color} rounded-2xl mb-4 md:mb-6 shadow-luxury`}
                 >
-                  <stat.icon className="h-10 w-10 text-luxury-black" />
+                  <stat.icon className="h-6 w-6 md:h-10 md:w-10 text-luxury-black" />
                 </motion.div>
 
                 {/* Animated Value */}
                 <motion.div
-                  className="text-5xl md:text-6xl font-black text-gradient mb-3"
+                  className="text-3xl md:text-5xl lg:text-6xl font-black text-gradient mb-2 md:mb-3"
                 >
                   {stat.value}{stat.suffix}
                 </motion.div>
 
                 {/* Label */}
-                <h3 className="text-xl font-serif font-bold text-text-primary mb-3">
+                <h3 className="text-sm md:text-xl font-serif font-bold text-text-primary mb-2 md:mb-3">
                   {stat.label}
                 </h3>
 
                 {/* Description */}
-                <p className="text-text-subtle leading-relaxed">
+                <p className="text-text-subtle leading-relaxed text-xs md:text-base">
                   {stat.description}
                 </p>
 
@@ -207,7 +207,7 @@ export default function StatsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-20"
         >
           {achievements.map((achievement, index) => (
             <motion.div
@@ -215,17 +215,17 @@ export default function StatsSection() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="glass-luxury p-6 rounded-2xl text-center group hover:scale-105 transition-all duration-500"
+              className="glass-luxury p-4 md:p-6 rounded-2xl text-center group hover:scale-105 transition-all duration-500"
             >
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.8 }}
-                className="inline-flex items-center justify-center w-16 h-16 bg-accent-gold/20 rounded-full mb-4"
+                className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 bg-accent-gold/20 rounded-full mb-3 md:mb-4"
               >
-                <achievement.icon className="h-8 w-8 text-accent-gold" />
+                <achievement.icon className="h-6 w-6 md:h-8 md:w-8 text-accent-gold" />
               </motion.div>
               
-              <h4 className="text-lg font-serif font-bold text-text-primary mb-2">
+              <h4 className="text-base md:text-lg font-serif font-bold text-text-primary mb-1 md:mb-2">
                 {achievement.title}
               </h4>
               
@@ -244,7 +244,7 @@ export default function StatsSection() {
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="glass-luxury p-12 md:p-16 rounded-3xl text-center relative overflow-hidden">
+          <div className="glass-luxury p-6 md:p-12 lg:p-16 rounded-3xl text-center relative overflow-hidden">
             {/* Background Decoration */}
             <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/5 to-transparent rounded-3xl"></div>
             
@@ -260,29 +260,29 @@ export default function StatsSection() {
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 transition={{ duration: 0.6, type: "spring" }}
-                className="inline-block text-6xl text-accent-gold/30 mb-6"
+                className="inline-block text-4xl md:text-6xl text-accent-gold/30 mb-4 md:mb-6"
               >
                 "
               </motion.div>
 
-              <blockquote className="text-2xl md:text-3xl font-serif italic text-text-primary mb-8 max-w-4xl">
+              <blockquote className="text-lg md:text-2xl lg:text-3xl font-serif italic text-text-primary mb-6 md:mb-8 max-w-4xl">
                 "BCar é honestidade pura. Encontrei exatamente o que procurava, 
                 sem surpresas, com transparência total e preço justo."
               </blockquote>
               
-              <div className="flex items-center justify-center space-x-4">
+              <div className="flex items-center justify-center space-x-3 md:space-x-4">
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className="w-16 h-16 bg-gradient-to-br from-accent-gold to-accent-gold-light rounded-full flex items-center justify-center shadow-luxury"
+                  className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-accent-gold to-accent-gold-light rounded-full flex items-center justify-center shadow-luxury"
                 >
-                  <Users className="h-8 w-8 text-luxury-black" />
+                  <Users className="h-6 w-6 md:h-8 md:w-8 text-luxury-black" />
                 </motion.div>
                 <div className="text-left">
-                  <div className="font-bold text-text-primary text-lg">Dr. António Mendes</div>
-                  <div className="text-text-subtle">Cliente VIP desde 2018</div>
+                  <div className="font-bold text-text-primary text-base md:text-lg">Dr. António Mendes</div>
+                  <div className="text-text-subtle text-sm">Cliente VIP desde 2018</div>
                   <div className="flex space-x-1 mt-1">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-accent-gold fill-current" />
+                      <Star key={i} className="h-3 w-3 md:h-4 md:w-4 text-accent-gold fill-current" />
                     ))}
                   </div>
                 </div>

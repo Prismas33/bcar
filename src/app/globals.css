@@ -82,6 +82,19 @@
   .section-divider {
     @apply h-px bg-gradient-to-r from-transparent via-accent-gold to-transparent opacity-30;
   }
+
+  /* Mobile optimizations */
+  .mobile-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .mobile-text-size {
+    @apply text-sm sm:text-base;
+  }
+  
+  .touch-target {
+    @apply min-h-[44px] flex items-center;
+  }
 }
 
 @layer utilities {
@@ -95,6 +108,45 @@
   
   .animate-shine {
     animation: shine 3s linear infinite;
+  }
+
+  /* Mobile-specific utilities */
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  .mobile-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .mobile-text-size {
+    @apply text-sm sm:text-base;
+  }
+  
+  .mobile-button-size {
+    @apply px-4 py-2 sm:px-6 sm:py-3;
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  .no-scroll-x {
+    overflow-x: hidden;
+  }
+
+  /* Better tap targets for mobile */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Mobile-optimized aspect ratios */
+  .aspect-mobile-card {
+    aspect-ratio: 4/3;
+  }
+  
+  @media (max-width: 640px) {
+    .aspect-mobile-card {
+      aspect-ratio: 16/9;
+    }
   }
 }
 

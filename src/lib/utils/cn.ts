@@ -33,13 +33,13 @@ export function getStatusColor(status: string): string {
 
 export function getStatusLabel(status: string): string {
   switch (status) {
-    case 'available':
+    case 'disponivel':
       return 'Disponível';
-    case 'reserved':
+    case 'reservado':
       return 'Reservado';
-    case 'sold':
+    case 'vendido':
       return 'Vendido';
-    case 'negotiating':
+    case 'negociacao':
       return 'Em Negociação';
     default:
       return 'Desconhecido';
@@ -48,13 +48,13 @@ export function getStatusLabel(status: string): string {
 
 export function getFuelLabel(fuel: string): string {
   switch (fuel) {
-    case 'gasoline':
+    case 'gasolina':
       return 'Gasolina';
     case 'diesel':
       return 'Diesel';
-    case 'electric':
+    case 'eletrico':
       return 'Elétrico';
-    case 'hybrid':
+    case 'hibrido':
       return 'Híbrido';
     default:
       return fuel;

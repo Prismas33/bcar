@@ -3,59 +3,59 @@ import { Car, Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-r
 
 export function Footer() {
   return (
-    <footer className="bg-secondary-100 border-t border-accent-gold/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-secondary-100 border-t border-accent-gold/20 mb-16 lg:mb-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Logo e Descrição */}
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <Car className="h-8 w-8 text-accent-gold" />
-              <span className="text-2xl font-serif font-bold text-gradient">
+          <div className="md:col-span-2">
+            <div className="flex items-center justify-center md:justify-start space-x-2 mb-3">
+              <Car className="h-6 w-6 text-accent-gold" />
+              <span className="text-xl font-serif font-bold text-gradient">
                 BCar
               </span>
             </div>
-            <p className="text-text-subtle mb-6 max-w-md">
+            <p className="text-text-subtle text-sm text-center md:text-left mb-4 max-w-md mx-auto md:mx-0">
               O seu stand automóvel de confiança em Portugal. Especializados em carros usados 
               de qualidade com total transparência e preços justos.
             </p>
             
             {/* Redes Sociais */}
-            <div className="flex space-x-4">
-              <a href="#" className="text-text-subtle hover:text-accent-gold transition-colors">
-                <Facebook className="h-6 w-6" />
+            <div className="flex space-x-4 justify-center md:justify-start">
+              <a href="#" className="text-text-subtle hover:text-accent-gold transition-colors p-1">
+                <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-text-subtle hover:text-accent-gold transition-colors">
-                <Instagram className="h-6 w-6" />
+              <a href="#" className="text-text-subtle hover:text-accent-gold transition-colors p-1">
+                <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-text-subtle hover:text-accent-gold transition-colors">
-                <Twitter className="h-6 w-6" />
+              <a href="#" className="text-text-subtle hover:text-accent-gold transition-colors p-1">
+                <Twitter className="h-5 w-5" />
               </a>
             </div>
           </div>
 
           {/* Links Rápidos */}
-          <div>
-            <h3 className="text-lg font-serif font-semibold text-text-primary mb-4">
+          <div className="text-center md:text-left">
+            <h3 className="text-sm font-serif font-semibold text-text-primary mb-3">
               Links Rápidos
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-1">
               <li>
-                <Link href="/" className="text-text-subtle hover:text-accent-gold transition-colors">
+                <Link href="/" className="text-text-subtle hover:text-accent-gold transition-colors text-sm">
                   Início
                 </Link>
               </li>
               <li>
-                <Link href="/catalog" className="text-text-subtle hover:text-accent-gold transition-colors">
+                <Link href="/catalog" className="text-text-subtle hover:text-accent-gold transition-colors text-sm">
                   Catálogo
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-text-subtle hover:text-accent-gold transition-colors">
+                <Link href="/about" className="text-text-subtle hover:text-accent-gold transition-colors text-sm">
                   Sobre Nós
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-text-subtle hover:text-accent-gold transition-colors">
+                <Link href="/contact" className="text-text-subtle hover:text-accent-gold transition-colors text-sm">
                   Contactos
                 </Link>
               </li>
@@ -63,38 +63,42 @@ export function Footer() {
           </div>
 
           {/* Contactos */}
-          <div>
-            <h3 className="text-lg font-serif font-semibold text-text-primary mb-4">
+          <div className="text-center md:text-left">
+            <h3 className="text-sm font-serif font-semibold text-text-primary mb-3">
               Contactos
             </h3>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-2 text-text-subtle">
-                <MapPin className="h-5 w-5 text-accent-gold" />
-                <span>Rua dos Carros, 123<br />1000-001 Lisboa</span>
+            <div className="space-y-2">
+              <div className="flex items-start justify-center md:justify-start space-x-2 text-text-subtle text-sm">
+                <MapPin className="h-4 w-4 text-accent-gold flex-shrink-0 mt-0.5" />
+                <span className="text-center md:text-left">Rua dos Carros, 123<br />1000-001 Lisboa</span>
               </div>
-              <div className="flex items-center space-x-2 text-text-subtle">
-                <Phone className="h-5 w-5 text-accent-gold" />
-                <span>+351 000 000 000</span>
+              <div className="flex items-center justify-center md:justify-start space-x-2 text-text-subtle text-sm">
+                <Phone className="h-4 w-4 text-accent-gold flex-shrink-0" />
+                <a href="tel:+351000000000" className="hover:text-accent-gold transition-colors">
+                  +351 000 000 000
+                </a>
               </div>
-              <div className="flex items-center space-x-2 text-text-subtle">
-                <Mail className="h-5 w-5 text-accent-gold" />
-                <span>info@bcar.pt</span>
+              <div className="flex items-center justify-center md:justify-start space-x-2 text-text-subtle text-sm">
+                <Mail className="h-4 w-4 text-accent-gold flex-shrink-0" />
+                <a href="mailto:info@bcar.pt" className="hover:text-accent-gold transition-colors">
+                  info@bcar.pt
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Linha de Separação e Copyright */}
-        <div className="border-t border-accent-gold/20 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-text-subtle text-sm">
+        {/* Copyright - Compacto */}
+        <div className="border-t border-accent-gold/20 mt-6 pt-4">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+            <p className="text-text-subtle text-xs text-center md:text-left">
               © 2024 BCar. Todos os direitos reservados.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-text-subtle hover:text-accent-gold text-sm transition-colors">
+            <div className="flex space-x-4">
+              <Link href="/privacy" className="text-text-subtle hover:text-accent-gold text-xs transition-colors">
                 Política de Privacidade
               </Link>
-              <Link href="/terms" className="text-text-subtle hover:text-accent-gold text-sm transition-colors">
+              <Link href="/terms" className="text-text-subtle hover:text-accent-gold text-xs transition-colors">
                 Termos de Uso
               </Link>
             </div>
