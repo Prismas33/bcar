@@ -23,20 +23,15 @@ import { Button } from '@/components/ui/Button';
 import { formatPrice } from '@/lib/utils/cn';
 
 interface PageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default function VehicleDetailPage({ params }: PageProps) {
-  const [vehicle, setVehicle] = useState<Vehicle | null>(null);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const [showContactModal, setShowContactModal] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  useEffect(() => {
-    // Buscar veículo pelos dados mock
-    const foundVehicle = mockVehicles.find(v => v.id === params.id);
-    setVehicle(foundVehicle || null);
-  }, [params.id]);
+export default async function VehicleDetailPage({ params }: PageProps) {
+  // Resolve os params no Next.js 15
+  const { id } = await params;
+  
+  // Buscar veículo pelos dados mock
+  const vehicle = mockVehicles.find(v => v.id === id);
 
   if (!vehicle) {
     return (
@@ -53,6 +48,15 @@ export default function VehicleDetailPage({ params }: PageProps) {
       </div>
     );
   }
+
+  return <VehicleDetailClient vehicle={vehicle} />;
+}
+
+// Componente client separado para toda a lógica de estado
+function VehicleDetailClient({ vehicle }: { vehicle: Vehicle }) {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [showContactModal, setShowContactModal] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();

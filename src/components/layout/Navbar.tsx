@@ -1,13 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Menu, X, Car, Phone, Mail } from 'lucide-react';
+import { Car, Phone, Mail } from 'lucide-react';
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
   const navigation = [
     { name: 'Início', href: '/' },
     { name: 'Catálogo', href: '/catalog' },
@@ -29,7 +25,7 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Hidden on mobile since we have bottom nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
@@ -53,52 +49,8 @@ export function Navbar() {
               </a>
             </div>
           </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-text-primary hover:text-accent-gold transition-colors"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-primary/95 backdrop-blur-md border-b border-accent-gold/20"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block px-3 py-2 text-text-primary hover:text-accent-gold transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-            
-            <div className="px-3 py-2 space-y-2 border-t border-accent-gold/20 mt-4">
-              <a href="tel:+351000000000" className="flex items-center space-x-2 text-text-subtle">
-                <Phone className="h-4 w-4" />
-                <span>+351 000 000 000</span>
-              </a>
-              <a href="mailto:info@bcar.pt" className="flex items-center space-x-2 text-text-subtle">
-                <Mail className="h-4 w-4" />
-                <span>info@bcar.pt</span>
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      )}
     </nav>
   );
 }

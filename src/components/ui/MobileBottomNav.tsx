@@ -2,19 +2,26 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, MessageCircle, Search, Heart, User } from 'lucide-react';
+import { Phone, MessageCircle, Heart, Home, Search, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 export function MobileBottomNav() {
-  const [activeTab, setActiveTab] = useState('catalog');
+  const [activeTab, setActiveTab] = useState('');
 
   const tabs = [
     {
-      id: 'search',
-      icon: Search,
-      label: 'Pesquisar',
-      href: '/catalog',
+      id: 'home',
+      icon: Home,
+      label: 'Início',
+      href: '/',
       color: 'text-accent-gold',
+    },
+    {
+      id: 'catalog',
+      icon: Search,
+      label: 'Catálogo',
+      href: '/catalog',
+      color: 'text-blue-400',
     },
     {
       id: 'favorites',
@@ -22,13 +29,6 @@ export function MobileBottomNav() {
       label: 'Favoritos',
       href: '/favorites',
       color: 'text-red-400',
-    },
-    {
-      id: 'contact',
-      icon: Phone,
-      label: 'Contacto',
-      href: '/contact',
-      color: 'text-green-400',
     },
     {
       id: 'whatsapp',
@@ -39,11 +39,11 @@ export function MobileBottomNav() {
       external: true,
     },
     {
-      id: 'profile',
-      icon: User,
-      label: 'Perfil',
-      href: '/profile',
-      color: 'text-blue-400',
+      id: 'contact',
+      icon: Mail,
+      label: 'Email',
+      href: '/contact',
+      color: 'text-purple-400',
     },
   ];
 
