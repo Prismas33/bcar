@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="#1a1a1a" stroke="url(#goldGradient)" stroke-width="3"/>
+  
+  <!-- Car icon -->
+  <g fill="url(#goldGradient)">
+    <!-- Car body -->
+    <rect x="25" y="45" width="50" height="15" rx="7"/>
+    <!-- Car top -->
+    <rect x="35" y="35" width="30" height="15" rx="5"/>
+    <!-- Wheels -->
+    <circle cx="35" cy="65" r="6" fill="#D4AF37"/>
+    <circle cx="65" cy="65" r="6" fill="#D4AF37"/>
+    <!-- Wheel centers -->
+    <circle cx="35" cy="65" r="3" fill="#1a1a1a"/>
+    <circle cx="65" cy="65" r="3" fill="#1a1a1a"/>
+  </g>
+  
+  <!-- BCar text -->
+  <text x="50" y="85" font-family="serif" font-size="12" font-weight="bold" fill="url(#goldGradient)" text-anchor="middle">BCar</text>
+</svg>

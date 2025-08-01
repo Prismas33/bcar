@@ -1,11 +1,14 @@
 import './globals.css';
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
-import { MobileBottomNav } from '@/components/ui/MobileBottomNav';
+import { ConditionalNavbar } from '@/components/layout/ConditionalNavbar';
+import { ConditionalFooter } from '@/components/layout/ConditionalFooter';
+import { ConditionalMobileBottomNav } from '@/components/layout/ConditionalMobileBottomNav';
 
 export const metadata = {
   title: 'BCar - Carros Usados de Qualidade',
   description: 'Stand automóvel especializado em carros usados de qualidade com total transparência e preços justos.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -16,12 +19,12 @@ export default function RootLayout({
   return (
     <html lang="pt">
       <body className="bg-primary text-text-primary font-sans no-scroll-x">
-        <Navbar />
+        <ConditionalNavbar />
         <main className="min-h-screen">
           {children}
         </main>
-        <Footer />
-        <MobileBottomNav />
+        <ConditionalFooter />
+        <ConditionalMobileBottomNav />
       </body>
     </html>
   );

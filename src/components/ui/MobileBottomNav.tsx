@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, MessageCircle, Heart, Home, Search, Mail } from 'lucide-react';
+import { Phone, MessageCircle, Heart, Home, Search, Mail, Monitor } from 'lucide-react';
 import Link from 'next/link';
 
 export function MobileBottomNav() {
@@ -24,11 +24,12 @@ export function MobileBottomNav() {
       color: 'text-blue-400',
     },
     {
-      id: 'favorites',
-      icon: Heart,
-      label: 'Favoritos',
-      href: '/favorites',
-      color: 'text-red-400',
+      id: 'admin',
+      icon: Monitor,
+      label: 'Admin',
+      href: '/admin/login',
+      color: 'text-accent-gold',
+      special: true,
     },
     {
       id: 'whatsapp',
@@ -64,27 +65,40 @@ export function MobileBottomNav() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 whileTap={{ scale: 0.9 }}
-                className={`flex flex-col items-center justify-center py-2 px-3 rounded-xl touch-target transition-all duration-300 ${
+                className={`relative flex flex-col items-center justify-center py-2 px-3 rounded-xl touch-target transition-all duration-300 ${
                   isActive 
                     ? 'bg-accent-gold/20 text-accent-gold' 
+                    : tab.special
+                    ? 'bg-accent-gold/10 text-accent-gold border border-accent-gold/30'
                     : 'text-text-subtle hover:text-text-primary'
                 }`}
               >
                 <motion.div
                   animate={{ 
-                    scale: isActive ? 1.1 : 1,
+                    scale: isActive ? 1.1 : tab.special ? 1.05 : 1,
                     y: isActive ? -2 : 0 
                   }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 >
-                  <Icon className={`h-5 w-5 mb-1 ${isActive ? tab.color : ''}`} />
+                  <Icon className={`h-5 w-5 mb-1 ${isActive ? tab.color : tab.special ? tab.color : ''}`} />
                 </motion.div>
                 
                 <span className={`text-xs font-medium ${
-                  isActive ? 'text-accent-gold' : 'text-text-subtle'
+                  isActive ? 'text-accent-gold' : tab.special ? 'text-accent-gold' : 'text-text-subtle'
                 }`}>
                   {tab.label}
                 </span>
+                
+                {/* Badge especial para admin */}
+                {tab.special && (
+                  <motion.div
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-1 rounded-full font-bold text-[8px]"
+                  >
+                    DEMO
+                  </motion.div>
+                )}
                 
                 {isActive && (
                   <motion.div

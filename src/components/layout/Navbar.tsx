@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Car, Phone, Mail } from 'lucide-react';
+import { Car, Phone, Mail, Monitor } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export function Navbar() {
   const navigation = [
@@ -36,6 +37,35 @@ export function Navbar() {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Botão Admin especial */}
+            <Link href="/admin/login">
+              <motion.div
+                animate={{
+                  boxShadow: [
+                    '0 0 5px rgba(212, 175, 55, 0.3)',
+                    '0 0 15px rgba(212, 175, 55, 0.6)',
+                    '0 0 5px rgba(212, 175, 55, 0.3)'
+                  ]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="relative bg-accent-gold/20 hover:bg-accent-gold/30 border border-accent-gold/50 rounded-lg px-4 py-2 transition-all duration-300 group"
+              >
+                <div className="flex items-center space-x-2">
+                  <Monitor className="h-4 w-4 text-accent-gold" />
+                  <span className="text-accent-gold font-semibold">Admin Demo</span>
+                </div>
+                
+                {/* Badge "NOVO" */}
+                <div className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full font-bold animate-pulse">
+                  DEMO
+                </div>
+              </motion.div>
+            </Link>
             
             {/* Contact Info */}
             <div className="flex items-center space-x-4 ml-8 pl-8 border-l border-accent-gold/20">

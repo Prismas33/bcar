@@ -287,5 +287,55 @@ export const mockLeads: Lead[] = [
     mensagem: 'Tenho interesse em conhecer mais sobre as opções de financiamento.',
     status: 'contatado',
     created_at: new Date('2024-01-19')
+  },
+  {
+    id: '3',
+    nome: 'Pedro Costa',
+    email: 'pedro.costa@email.com',
+    telefone: '(21) 77777-7777',
+    vehicleId: '3',
+    mensagem: 'Gostaria de saber mais sobre o histórico do veículo.',
+    status: 'qualificado',
+    created_at: new Date('2024-01-18')
+  },
+  {
+    id: '4',
+    nome: 'Ana Rodrigues',
+    email: 'ana.rodrigues@email.com',
+    telefone: '(31) 66666-6666',
+    vehicleId: '1',
+    mensagem: 'Interessada em financiamento. Qual a taxa de juro?',
+    status: 'convertido',
+    created_at: new Date('2024-01-17')
+  },
+  {
+    id: '5',
+    nome: 'Carlos Silva',
+    email: 'carlos.silva@email.com',
+    telefone: '(41) 55555-5555',
+    vehicleId: '4',
+    mensagem: 'Posso fazer test drive amanhã?',
+    status: 'novo',
+    created_at: new Date('2024-01-20')
+  },
+  {
+    id: '6',
+    nome: 'Sofia Pereira',
+    email: 'sofia.pereira@email.com',
+    telefone: '(51) 44444-4444',
+    vehicleId: '2',
+    mensagem: 'Gostaria de uma proposta para pagamento à vista.',
+    status: 'contatado',
+    created_at: new Date('2024-01-16')
+  },
+  {
+    id: '7',
+    nome: 'Miguel Fernandes',
+    email: 'miguel.fernandes@email.com',
+    telefone: '(61) 33333-3333',
+    vehicleId: '5',
+    mensagem: 'Tenho um veículo para retoma. Fazem avaliação?',
+    status: 'qualificado',
+    created_at: new Date('2024-01-15')
   }
 ]
