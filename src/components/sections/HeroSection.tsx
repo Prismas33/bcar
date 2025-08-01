@@ -485,33 +485,34 @@ export default function HeroSection() {
         </div>
       </motion.div>
       {/* Enhanced Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 2 }}
-        className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20"
-      >
+      <div className="absolute inset-x-0 bottom-4 sm:bottom-8 z-20 flex justify-center">
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity }}
-          className="flex flex-col items-center justify-center space-y-2 sm:space-y-3 w-full"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 2 }}
         >
-          <div className="w-6 h-12 sm:w-8 sm:h-16 border-2 border-accent-gold/50 rounded-full flex justify-center p-2 sm:p-3 glass-luxury">
-            <motion.div
-              animate={{ y: [0, 12, 0, 16, 0], opacity: [1, 0.3, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1 h-3 sm:w-1.5 sm:h-4 bg-accent-gold rounded-full"
-            />
-          </div>
-          <motion.span 
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-accent-gold/70 text-xs font-medium tracking-[0.2em] uppercase hidden sm:block text-center w-full"
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity }}
+            className="flex flex-col items-center justify-center space-y-2 sm:space-y-3"
           >
-            DESCUBRA MAIS
-          </motion.span>
+            <div className="w-6 h-12 sm:w-8 sm:h-16 border-2 border-accent-gold/50 rounded-full flex justify-center p-2 sm:p-3 glass-luxury">
+              <motion.div
+                animate={{ y: [0, 12, 0, 16, 0], opacity: [1, 0.3, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="w-1 h-3 sm:w-1.5 sm:h-4 bg-accent-gold rounded-full"
+              />
+            </div>
+            <motion.span 
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="text-accent-gold/70 text-xs font-medium tracking-[0.2em] uppercase hidden sm:block text-center whitespace-nowrap"
+            >
+              DESCUBRA MAIS
+            </motion.span>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 pointer-events-none">
