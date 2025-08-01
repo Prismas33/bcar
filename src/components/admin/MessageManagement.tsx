@@ -253,42 +253,42 @@ export function MessageManagement() {
           </div>
         </div>
 
-        <div className="bg-secondary-100 border border-accent-gold/20 rounded-lg p-4">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
-              <Clock className="h-5 w-5 text-yellow-400" />
+        <div className="bg-secondary-100 border border-accent-gold/20 rounded-lg p-3 lg:p-4">
+          <div className="flex items-center space-x-2 lg:space-x-3">
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center">
+              <Clock className="h-4 w-4 lg:h-5 lg:w-5 text-yellow-400" />
             </div>
             <div>
-              <p className="text-sm text-text-subtle">Pendentes</p>
-              <p className="text-xl font-bold text-text-primary">
+              <p className="text-xs lg:text-sm text-text-subtle">Pendentes</p>
+              <p className="text-lg lg:text-xl font-bold text-text-primary">
                 {messages.filter(m => m.status === 'read').length}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-secondary-100 border border-accent-gold/20 rounded-lg p-4">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
-              <CheckCircle className="h-5 w-5 text-green-400" />
+        <div className="bg-secondary-100 border border-accent-gold/20 rounded-lg p-3 lg:p-4">
+          <div className="flex items-center space-x-2 lg:space-x-3">
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
+              <CheckCircle className="h-4 w-4 lg:h-5 lg:w-5 text-green-400" />
             </div>
             <div>
-              <p className="text-sm text-text-subtle">Respondidas</p>
-              <p className="text-xl font-bold text-text-primary">
+              <p className="text-xs lg:text-sm text-text-subtle">Respondidas</p>
+              <p className="text-lg lg:text-xl font-bold text-text-primary">
                 {messages.filter(m => m.status === 'replied').length}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-secondary-100 border border-accent-gold/20 rounded-lg p-4">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
-              <Star className="h-5 w-5 text-red-400" />
+        <div className="bg-secondary-100 border border-accent-gold/20 rounded-lg p-3 lg:p-4">
+          <div className="flex items-center space-x-2 lg:space-x-3">
+            <div className="w-8 h-8 lg:w-10 lg:h-10 bg-red-500/20 rounded-lg flex items-center justify-center">
+              <Star className="h-4 w-4 lg:h-5 lg:w-5 text-red-400" />
             </div>
             <div>
-              <p className="text-sm text-text-subtle">Alta Prioridade</p>
-              <p className="text-xl font-bold text-text-primary">
+              <p className="text-xs lg:text-sm text-text-subtle">Alta Prioridade</p>
+              <p className="text-lg lg:text-xl font-bold text-text-primary">
                 {messages.filter(m => m.priority === 'high').length}
               </p>
             </div>
@@ -297,8 +297,8 @@ export function MessageManagement() {
       </div>
 
       {/* Filters */}
-      <div className="bg-secondary-100 border border-accent-gold/20 rounded-lg p-4">
-        <div className="flex flex-col sm:flex-row gap-4">
+      <div className="bg-secondary-100 border border-accent-gold/20 rounded-lg p-3 lg:p-4">
+        <div className="flex flex-col space-y-3 lg:space-y-0 lg:flex-row lg:gap-4">
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-text-subtle" />
             <input
@@ -306,28 +306,30 @@ export function MessageManagement() {
               placeholder="Pesquisar por nome, email ou assunto..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 bg-primary border border-accent-gold/20 rounded-lg text-text-primary placeholder-text-subtle focus:outline-none focus:border-accent-gold"
+              className="w-full pl-10 pr-4 py-2 bg-primary border border-accent-gold/20 rounded-lg text-text-primary placeholder-text-subtle focus:outline-none focus:border-accent-gold text-sm lg:text-base"
             />
           </div>
           
-          <div className="flex items-center space-x-2">
-            <Filter className="h-4 w-4 text-text-subtle" />
-            <select
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-3 py-2 bg-primary border border-accent-gold/20 rounded-lg text-text-primary focus:outline-none focus:border-accent-gold"
-            >
-              <option value="all">Todos os Status</option>
-              <option value="unread">Não lidas</option>
-              <option value="read">Lidas</option>
-              <option value="replied">Respondidas</option>
-              <option value="archived">Arquivadas</option>
-            </select>
+          <div className="flex flex-col space-y-2 lg:space-y-0 lg:flex-row lg:items-center lg:space-x-2">
+            <div className="flex items-center space-x-2">
+              <Filter className="h-4 w-4 text-text-subtle flex-shrink-0" />
+              <select
+                value={statusFilter}
+                onChange={(e) => setStatusFilter(e.target.value)}
+                className="flex-1 lg:flex-none px-3 py-2 bg-primary border border-accent-gold/20 rounded-lg text-text-primary focus:outline-none focus:border-accent-gold text-sm"
+              >
+                <option value="all">Todos os Status</option>
+                <option value="unread">Não lidas</option>
+                <option value="read">Lidas</option>
+                <option value="replied">Respondidas</option>
+                <option value="archived">Arquivadas</option>
+              </select>
+            </div>
             
             <select
               value={priorityFilter}
               onChange={(e) => setPriorityFilter(e.target.value)}
-              className="px-3 py-2 bg-primary border border-accent-gold/20 rounded-lg text-text-primary focus:outline-none focus:border-accent-gold"
+              className="px-3 py-2 bg-primary border border-accent-gold/20 rounded-lg text-text-primary focus:outline-none focus:border-accent-gold text-sm"
             >
               <option value="all">Todas Prioridades</option>
               <option value="high">Alta</option>
@@ -338,8 +340,124 @@ export function MessageManagement() {
         </div>
       </div>
 
-      {/* Messages List */}
-      <div className="bg-secondary-100 border border-accent-gold/20 rounded-lg overflow-hidden">
+      {/* Messages List - Mobile Cards */}
+      <div className="space-y-4 lg:hidden">
+        {sortedMessages.map((message) => (
+          <motion.div
+            key={`mobile-${message.id}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className={`bg-secondary-100 border border-accent-gold/20 rounded-lg p-4 ${
+              message.status === 'unread' ? 'bg-blue-500/5 border-blue-500/30' : ''
+            }`}
+            onClick={() => {
+              setSelectedMessage(message);
+              markAsRead(message.id);
+            }}
+          >
+            <div className="flex items-start justify-between mb-3">
+              <div className="flex items-center space-x-3 flex-1 min-w-0">
+                <div className="w-10 h-10 bg-accent-gold/20 rounded-full flex items-center justify-center flex-shrink-0">
+                  <User className="h-5 w-5 text-accent-gold" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <h3 className={`font-semibold truncate ${message.status === 'unread' ? 'text-text-primary' : 'text-text-subtle'}`}>
+                    {message.from}
+                  </h3>
+                  <p className="text-sm text-text-subtle truncate">{message.email}</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center space-x-2 flex-shrink-0">
+                <div className={`w-3 h-3 rounded-full ${
+                  message.priority === 'high' ? 'bg-red-400' :
+                  message.priority === 'normal' ? 'bg-yellow-400' : 'bg-green-400'
+                }`} />
+                <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold border ${getStatusColor(message.status)}`}>
+                  {getStatusIcon(message.status)}
+                </span>
+              </div>
+            </div>
+
+            <div className="space-y-2 mb-4">
+              <p className={`font-medium ${message.status === 'unread' ? 'text-text-primary' : 'text-text-subtle'}`}>
+                {message.subject}
+              </p>
+              
+              {message.vehicleId && (
+                <p className="text-sm text-accent-gold">
+                  🚗 {getVehicleInfo(message.vehicleId)}
+                </p>
+              )}
+            </div>
+
+            <div className="flex items-center justify-between text-xs text-text-subtle mb-3">
+              <span>
+                {message.created_at.toLocaleDateString('pt-PT')} às {message.created_at.toLocaleTimeString('pt-PT', { hour: '2-digit', minute: '2-digit' })}
+              </span>
+              <span className={`font-medium ${getPriorityColor(message.priority)}`}>
+                {getPriorityLabel(message.priority)}
+              </span>
+            </div>
+
+            <div className="flex items-center justify-between pt-3 border-t border-accent-gold/10">
+              <select
+                value={message.status}
+                onChange={(e) => {
+                  e.stopPropagation();
+                  updateMessageStatus(message.id, e.target.value as Message['status']);
+                }}
+                className="text-xs px-2 py-1 bg-primary border border-accent-gold/20 rounded text-text-primary focus:outline-none focus:border-accent-gold"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <option value="unread">Não lida</option>
+                <option value="read">Lida</option>
+                <option value="replied">Respondida</option>
+                <option value="archived">Arquivada</option>
+              </select>
+              
+              <div className="flex items-center space-x-1">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedMessage(message);
+                    setShowReplyModal(true);
+                  }}
+                  className="p-2 text-text-subtle hover:text-accent-gold transition-colors"
+                  title="Responder"
+                >
+                  <Reply className="h-4 w-4" />
+                </button>
+                
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.open(`mailto:${message.email}`);
+                  }}
+                  className="p-2 text-text-subtle hover:text-accent-gold transition-colors"
+                  title="Enviar email"
+                >
+                  <Mail className="h-4 w-4" />
+                </button>
+                
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    deleteMessage(message.id);
+                  }}
+                  className="p-2 text-text-subtle hover:text-red-400 transition-colors"
+                  title="Eliminar"
+                >
+                  <Trash2 className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Messages List - Desktop Table */}
+      <div className="bg-secondary-100 border border-accent-gold/20 rounded-lg overflow-hidden hidden lg:block">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-primary border-b border-accent-gold/20">
@@ -356,7 +474,7 @@ export function MessageManagement() {
             <tbody>
               {sortedMessages.map((message) => (
                 <motion.tr
-                  key={message.id}
+                  key={`desktop-${message.id}`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   className={`border-b border-accent-gold/10 hover:bg-primary/50 transition-colors cursor-pointer ${
